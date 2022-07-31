@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AccountDb" representedClassName="AccountDb" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="countryCode" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="currencyCode" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="accountRecords" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AccountRecordDb" inverseName="account" inverseEntity="AccountRecordDb"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TransactionDb" inverseName="account" inverseEntity="TransactionDb"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="AccountRecordDb" representedClassName="AccountRecordDb" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AccountDb" inverseName="accountRecords" inverseEntity="AccountDb"/>
+    </entity>
+    <entity name="TransactionDb" representedClassName="TransactionDb" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="categoryType" optional="YES" attributeType="String"/>
+        <attribute name="countryCode" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="currencyCode" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="transferAccountId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AccountDb" inverseName="transactions" inverseEntity="AccountDb"/>
+        <relationship name="transactionRecords" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TransactionRecordDb" inverseName="transaction" inverseEntity="TransactionRecordDb"/>
+    </entity>
+    <entity name="TransactionRecordDb" representedClassName="TransactionRecordDb" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="transaction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TransactionDb" inverseName="transactionRecords" inverseEntity="TransactionDb"/>
+    </entity>
+    <elements>
+        <element name="AccountDb" positionX="-690.8392333984375" positionY="-354.1044006347656" width="128" height="193"/>
+        <element name="AccountRecordDb" positionX="-469.978515625" positionY="-282.1817932128906" width="128" height="103"/>
+        <element name="TransactionDb" positionX="-466.918212890625" positionY="-82.66180419921875" width="128" height="238"/>
+        <element name="TransactionRecordDb" positionX="-142.302490234375" positionY="63.19158935546875" width="128" height="103"/>
+    </elements>
+</model>

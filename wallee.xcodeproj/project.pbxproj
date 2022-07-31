@@ -7,18 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36E2043D28965BDD00BBC1B9 /* walleeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2043C28965BDD00BBC1B9 /* walleeApp.swift */; };
+		36E2043D28965BDD00BBC1B9 /* WalleeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2043C28965BDD00BBC1B9 /* WalleeApp.swift */; };
 		36E2043F28965BDD00BBC1B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2043E28965BDD00BBC1B9 /* ContentView.swift */; };
 		36E2044128965BDF00BBC1B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36E2044028965BDF00BBC1B9 /* Assets.xcassets */; };
 		36E2044428965BDF00BBC1B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36E2044328965BDF00BBC1B9 /* Preview Assets.xcassets */; };
+		36E204502896606200BBC1B9 /* WalleeDb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36E2044E2896606200BBC1B9 /* WalleeDb.xcdatamodeld */; };
+		36E204792896793800BBC1B9 /* AccountDb+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204712896793800BBC1B9 /* AccountDb+CoreDataClass.swift */; };
+		36E2047A2896793800BBC1B9 /* AccountDb+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204722896793800BBC1B9 /* AccountDb+CoreDataProperties.swift */; };
+		36E2047B2896793800BBC1B9 /* TransactionDb+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204732896793800BBC1B9 /* TransactionDb+CoreDataClass.swift */; };
+		36E2047C2896793800BBC1B9 /* TransactionDb+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204742896793800BBC1B9 /* TransactionDb+CoreDataProperties.swift */; };
+		36E2047D2896793800BBC1B9 /* TransactionRecordDb+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204752896793800BBC1B9 /* TransactionRecordDb+CoreDataClass.swift */; };
+		36E2047E2896793800BBC1B9 /* TransactionRecordDb+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204762896793800BBC1B9 /* TransactionRecordDb+CoreDataProperties.swift */; };
+		36E2047F2896793800BBC1B9 /* AccountRecordDb+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204772896793800BBC1B9 /* AccountRecordDb+CoreDataClass.swift */; };
+		36E204802896793800BBC1B9 /* AccountRecordDb+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204782896793800BBC1B9 /* AccountRecordDb+CoreDataProperties.swift */; };
+		36E2048328967DCA00BBC1B9 /* Loggr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2048228967DCA00BBC1B9 /* Loggr.swift */; };
+		36E2048528967E6E00BBC1B9 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2048428967E6E00BBC1B9 /* Logging.swift */; };
+		36E204872896825E00BBC1B9 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204862896825E00BBC1B9 /* Log.swift */; };
+		36E204892896858900BBC1B9 /* DebugLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204882896858900BBC1B9 /* DebugLogging.swift */; };
+		36E2048C2896AC3E00BBC1B9 /* WalleeAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2048B2896AC3E00BBC1B9 /* WalleeAppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		36E2043928965BDD00BBC1B9 /* wallee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallee.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		36E2043C28965BDD00BBC1B9 /* walleeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walleeApp.swift; sourceTree = "<group>"; };
+		36E2043C28965BDD00BBC1B9 /* WalleeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalleeApp.swift; sourceTree = "<group>"; };
 		36E2043E28965BDD00BBC1B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		36E2044028965BDF00BBC1B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36E2044328965BDF00BBC1B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		36E2044F2896606200BBC1B9 /* WalleeDb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WalleeDb.xcdatamodel; sourceTree = "<group>"; };
+		36E204712896793800BBC1B9 /* AccountDb+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountDb+CoreDataClass.swift"; sourceTree = "<group>"; };
+		36E204722896793800BBC1B9 /* AccountDb+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountDb+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		36E204732896793800BBC1B9 /* TransactionDb+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionDb+CoreDataClass.swift"; sourceTree = "<group>"; };
+		36E204742896793800BBC1B9 /* TransactionDb+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionDb+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		36E204752896793800BBC1B9 /* TransactionRecordDb+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionRecordDb+CoreDataClass.swift"; sourceTree = "<group>"; };
+		36E204762896793800BBC1B9 /* TransactionRecordDb+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionRecordDb+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		36E204772896793800BBC1B9 /* AccountRecordDb+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountRecordDb+CoreDataClass.swift"; sourceTree = "<group>"; };
+		36E204782896793800BBC1B9 /* AccountRecordDb+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountRecordDb+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		36E2048228967DCA00BBC1B9 /* Loggr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggr.swift; sourceTree = "<group>"; };
+		36E2048428967E6E00BBC1B9 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		36E204862896825E00BBC1B9 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		36E204882896858900BBC1B9 /* DebugLogging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLogging.swift; sourceTree = "<group>"; };
+		36E2048B2896AC3E00BBC1B9 /* WalleeAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalleeAppDelegate.swift; sourceTree = "<group>"; };
+		36E2048F2896B47B00BBC1B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +80,11 @@
 		36E2043B28965BDD00BBC1B9 /* wallee */ = {
 			isa = PBXGroup;
 			children = (
-				36E2043C28965BDD00BBC1B9 /* walleeApp.swift */,
-				36E2043E28965BDD00BBC1B9 /* ContentView.swift */,
 				36E2044028965BDF00BBC1B9 /* Assets.xcassets */,
+				36E2044A28965DE300BBC1B9 /* foundation */,
+				36E2048A2896A73500BBC1B9 /* runtime */,
 				36E2044228965BDF00BBC1B9 /* Preview Content */,
+				36E2048F2896B47B00BBC1B9 /* Info.plist */,
 			);
 			path = wallee;
 			sourceTree = "<group>";
@@ -65,6 +95,68 @@
 				36E2044328965BDF00BBC1B9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		36E2044A28965DE300BBC1B9 /* foundation */ = {
+			isa = PBXGroup;
+			children = (
+				36E2048128967D9E00BBC1B9 /* logger */,
+				36E2044B28965E0100BBC1B9 /* datasource */,
+			);
+			path = foundation;
+			sourceTree = "<group>";
+		};
+		36E2044B28965E0100BBC1B9 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				36E2044C28965E1300BBC1B9 /* local */,
+				36E2044D28965E1B00BBC1B9 /* preference */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		36E2044C28965E1300BBC1B9 /* local */ = {
+			isa = PBXGroup;
+			children = (
+				36E204712896793800BBC1B9 /* AccountDb+CoreDataClass.swift */,
+				36E204732896793800BBC1B9 /* TransactionDb+CoreDataClass.swift */,
+				36E204772896793800BBC1B9 /* AccountRecordDb+CoreDataClass.swift */,
+				36E204752896793800BBC1B9 /* TransactionRecordDb+CoreDataClass.swift */,
+				36E204722896793800BBC1B9 /* AccountDb+CoreDataProperties.swift */,
+				36E204742896793800BBC1B9 /* TransactionDb+CoreDataProperties.swift */,
+				36E204762896793800BBC1B9 /* TransactionRecordDb+CoreDataProperties.swift */,
+				36E204782896793800BBC1B9 /* AccountRecordDb+CoreDataProperties.swift */,
+				36E2044E2896606200BBC1B9 /* WalleeDb.xcdatamodeld */,
+			);
+			path = local;
+			sourceTree = "<group>";
+		};
+		36E2044D28965E1B00BBC1B9 /* preference */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = preference;
+			sourceTree = "<group>";
+		};
+		36E2048128967D9E00BBC1B9 /* logger */ = {
+			isa = PBXGroup;
+			children = (
+				36E2048228967DCA00BBC1B9 /* Loggr.swift */,
+				36E2048428967E6E00BBC1B9 /* Logging.swift */,
+				36E204862896825E00BBC1B9 /* Log.swift */,
+				36E204882896858900BBC1B9 /* DebugLogging.swift */,
+			);
+			path = logger;
+			sourceTree = "<group>";
+		};
+		36E2048A2896A73500BBC1B9 /* runtime */ = {
+			isa = PBXGroup;
+			children = (
+				36E2048B2896AC3E00BBC1B9 /* WalleeAppDelegate.swift */,
+				36E2043C28965BDD00BBC1B9 /* WalleeApp.swift */,
+				36E2043E28965BDD00BBC1B9 /* ContentView.swift */,
+			);
+			path = runtime;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +229,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36E2047E2896793800BBC1B9 /* TransactionRecordDb+CoreDataProperties.swift in Sources */,
+				36E2048528967E6E00BBC1B9 /* Logging.swift in Sources */,
+				36E2047B2896793800BBC1B9 /* TransactionDb+CoreDataClass.swift in Sources */,
+				36E2047F2896793800BBC1B9 /* AccountRecordDb+CoreDataClass.swift in Sources */,
+				36E2047D2896793800BBC1B9 /* TransactionRecordDb+CoreDataClass.swift in Sources */,
+				36E2047A2896793800BBC1B9 /* AccountDb+CoreDataProperties.swift in Sources */,
+				36E2047C2896793800BBC1B9 /* TransactionDb+CoreDataProperties.swift in Sources */,
 				36E2043F28965BDD00BBC1B9 /* ContentView.swift in Sources */,
-				36E2043D28965BDD00BBC1B9 /* walleeApp.swift in Sources */,
+				36E2048C2896AC3E00BBC1B9 /* WalleeAppDelegate.swift in Sources */,
+				36E204872896825E00BBC1B9 /* Log.swift in Sources */,
+				36E204502896606200BBC1B9 /* WalleeDb.xcdatamodeld in Sources */,
+				36E204802896793800BBC1B9 /* AccountRecordDb+CoreDataProperties.swift in Sources */,
+				36E2048328967DCA00BBC1B9 /* Loggr.swift in Sources */,
+				36E2043D28965BDD00BBC1B9 /* WalleeApp.swift in Sources */,
+				36E204892896858900BBC1B9 /* DebugLogging.swift in Sources */,
+				36E204792896793800BBC1B9 /* AccountDb+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +255,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_DISPLAY_NAME = "Wallee Debug";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -210,6 +317,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_DISPLAY_NAME = Wallee;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -272,6 +380,7 @@
 				DEVELOPMENT_TEAM = Y225V8UXTQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = wallee/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,6 +410,7 @@
 				DEVELOPMENT_TEAM = Y225V8UXTQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = wallee/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -341,6 +451,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		36E2044E2896606200BBC1B9 /* WalleeDb.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				36E2044F2896606200BBC1B9 /* WalleeDb.xcdatamodel */,
+			);
+			currentVersion = 36E2044F2896606200BBC1B9 /* WalleeDb.xcdatamodel */;
+			path = WalleeDb.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 36E2043128965BDD00BBC1B9 /* Project object */;
 }
