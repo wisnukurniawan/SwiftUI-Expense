@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Log {
+enum LogLevel {
     case debug
     case info
     case notice

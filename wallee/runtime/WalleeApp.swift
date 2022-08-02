@@ -17,6 +17,7 @@ struct WalleeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, LocalModule.shared.container.viewContext)
         }.onChange(of: scenePhase) { phase in
             switch (phase) {
             case .background:

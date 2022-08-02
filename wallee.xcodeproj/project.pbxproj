@@ -22,9 +22,16 @@
 		36E204802896793800BBC1B9 /* AccountRecordDb+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204782896793800BBC1B9 /* AccountRecordDb+CoreDataProperties.swift */; };
 		36E2048328967DCA00BBC1B9 /* Loggr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2048228967DCA00BBC1B9 /* Loggr.swift */; };
 		36E2048528967E6E00BBC1B9 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2048428967E6E00BBC1B9 /* Logging.swift */; };
-		36E204872896825E00BBC1B9 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204862896825E00BBC1B9 /* Log.swift */; };
+		36E204872896825E00BBC1B9 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204862896825E00BBC1B9 /* LogLevel.swift */; };
 		36E204892896858900BBC1B9 /* DebugLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204882896858900BBC1B9 /* DebugLogging.swift */; };
 		36E2048C2896AC3E00BBC1B9 /* WalleeAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2048B2896AC3E00BBC1B9 /* WalleeAppDelegate.swift */; };
+		36E204922898B63600BBC1B9 /* LocalModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204912898B63600BBC1B9 /* LocalModule.swift */; };
+		36E204942898BC5800BBC1B9 /* PersistentSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204932898BC5800BBC1B9 /* PersistentSync.swift */; };
+		36E204962898C28400BBC1B9 /* LocalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204952898C28400BBC1B9 /* LocalError.swift */; };
+		36E204992898FE8400BBC1B9 /* NSPersistent+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204982898FE8400BBC1B9 /* NSPersistent+Extension.swift */; };
+		36E2049F2899E2CA00BBC1B9 /* LoggrInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2049E2899E2CA00BBC1B9 /* LoggrInitializer.swift */; };
+		36E204A12899E6D400BBC1B9 /* PersistentSyncInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204A02899E6D400BBC1B9 /* PersistentSyncInitializer.swift */; };
+		36E204A42899E93C00BBC1B9 /* Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204A32899E93C00BBC1B9 /* Initializer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,10 +51,17 @@
 		36E204782896793800BBC1B9 /* AccountRecordDb+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountRecordDb+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		36E2048228967DCA00BBC1B9 /* Loggr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggr.swift; sourceTree = "<group>"; };
 		36E2048428967E6E00BBC1B9 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
-		36E204862896825E00BBC1B9 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		36E204862896825E00BBC1B9 /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
 		36E204882896858900BBC1B9 /* DebugLogging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLogging.swift; sourceTree = "<group>"; };
 		36E2048B2896AC3E00BBC1B9 /* WalleeAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalleeAppDelegate.swift; sourceTree = "<group>"; };
 		36E2048F2896B47B00BBC1B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36E204912898B63600BBC1B9 /* LocalModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalModule.swift; sourceTree = "<group>"; };
+		36E204932898BC5800BBC1B9 /* PersistentSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentSync.swift; sourceTree = "<group>"; };
+		36E204952898C28400BBC1B9 /* LocalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalError.swift; sourceTree = "<group>"; };
+		36E204982898FE8400BBC1B9 /* NSPersistent+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPersistent+Extension.swift"; sourceTree = "<group>"; };
+		36E2049E2899E2CA00BBC1B9 /* LoggrInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggrInitializer.swift; sourceTree = "<group>"; };
+		36E204A02899E6D400BBC1B9 /* PersistentSyncInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentSyncInitializer.swift; sourceTree = "<group>"; };
+		36E204A32899E93C00BBC1B9 /* Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +116,7 @@
 			children = (
 				36E2048128967D9E00BBC1B9 /* logger */,
 				36E2044B28965E0100BBC1B9 /* datasource */,
+				36E204A22899E92B00BBC1B9 /* startup */,
 			);
 			path = foundation;
 			sourceTree = "<group>";
@@ -109,6 +124,8 @@
 		36E2044B28965E0100BBC1B9 /* datasource */ = {
 			isa = PBXGroup;
 			children = (
+				36E204902898B61E00BBC1B9 /* di */,
+				36E204972898FE4900BBC1B9 /* extension */,
 				36E2044C28965E1300BBC1B9 /* local */,
 				36E2044D28965E1B00BBC1B9 /* preference */,
 			);
@@ -118,6 +135,8 @@
 		36E2044C28965E1300BBC1B9 /* local */ = {
 			isa = PBXGroup;
 			children = (
+				36E204932898BC5800BBC1B9 /* PersistentSync.swift */,
+				36E204952898C28400BBC1B9 /* LocalError.swift */,
 				36E204712896793800BBC1B9 /* AccountDb+CoreDataClass.swift */,
 				36E204732896793800BBC1B9 /* TransactionDb+CoreDataClass.swift */,
 				36E204772896793800BBC1B9 /* AccountRecordDb+CoreDataClass.swift */,
@@ -143,7 +162,7 @@
 			children = (
 				36E2048228967DCA00BBC1B9 /* Loggr.swift */,
 				36E2048428967E6E00BBC1B9 /* Logging.swift */,
-				36E204862896825E00BBC1B9 /* Log.swift */,
+				36E204862896825E00BBC1B9 /* LogLevel.swift */,
 				36E204882896858900BBC1B9 /* DebugLogging.swift */,
 			);
 			path = logger;
@@ -152,11 +171,45 @@
 		36E2048A2896A73500BBC1B9 /* runtime */ = {
 			isa = PBXGroup;
 			children = (
+				36E2049D2899E2A500BBC1B9 /* initializer */,
 				36E2048B2896AC3E00BBC1B9 /* WalleeAppDelegate.swift */,
 				36E2043C28965BDD00BBC1B9 /* WalleeApp.swift */,
 				36E2043E28965BDD00BBC1B9 /* ContentView.swift */,
 			);
 			path = runtime;
+			sourceTree = "<group>";
+		};
+		36E204902898B61E00BBC1B9 /* di */ = {
+			isa = PBXGroup;
+			children = (
+				36E204912898B63600BBC1B9 /* LocalModule.swift */,
+			);
+			path = di;
+			sourceTree = "<group>";
+		};
+		36E204972898FE4900BBC1B9 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				36E204982898FE8400BBC1B9 /* NSPersistent+Extension.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		36E2049D2899E2A500BBC1B9 /* initializer */ = {
+			isa = PBXGroup;
+			children = (
+				36E2049E2899E2CA00BBC1B9 /* LoggrInitializer.swift */,
+				36E204A02899E6D400BBC1B9 /* PersistentSyncInitializer.swift */,
+			);
+			path = initializer;
+			sourceTree = "<group>";
+		};
+		36E204A22899E92B00BBC1B9 /* startup */ = {
+			isa = PBXGroup;
+			children = (
+				36E204A32899E93C00BBC1B9 /* Initializer.swift */,
+			);
+			path = startup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,19 +284,26 @@
 			files = (
 				36E2047E2896793800BBC1B9 /* TransactionRecordDb+CoreDataProperties.swift in Sources */,
 				36E2048528967E6E00BBC1B9 /* Logging.swift in Sources */,
+				36E204942898BC5800BBC1B9 /* PersistentSync.swift in Sources */,
 				36E2047B2896793800BBC1B9 /* TransactionDb+CoreDataClass.swift in Sources */,
 				36E2047F2896793800BBC1B9 /* AccountRecordDb+CoreDataClass.swift in Sources */,
+				36E204992898FE8400BBC1B9 /* NSPersistent+Extension.swift in Sources */,
 				36E2047D2896793800BBC1B9 /* TransactionRecordDb+CoreDataClass.swift in Sources */,
 				36E2047A2896793800BBC1B9 /* AccountDb+CoreDataProperties.swift in Sources */,
 				36E2047C2896793800BBC1B9 /* TransactionDb+CoreDataProperties.swift in Sources */,
 				36E2043F28965BDD00BBC1B9 /* ContentView.swift in Sources */,
+				36E204922898B63600BBC1B9 /* LocalModule.swift in Sources */,
 				36E2048C2896AC3E00BBC1B9 /* WalleeAppDelegate.swift in Sources */,
-				36E204872896825E00BBC1B9 /* Log.swift in Sources */,
+				36E204962898C28400BBC1B9 /* LocalError.swift in Sources */,
+				36E204872896825E00BBC1B9 /* LogLevel.swift in Sources */,
+				36E204A12899E6D400BBC1B9 /* PersistentSyncInitializer.swift in Sources */,
 				36E204502896606200BBC1B9 /* WalleeDb.xcdatamodeld in Sources */,
+				36E204A42899E93C00BBC1B9 /* Initializer.swift in Sources */,
 				36E204802896793800BBC1B9 /* AccountRecordDb+CoreDataProperties.swift in Sources */,
 				36E2048328967DCA00BBC1B9 /* Loggr.swift in Sources */,
 				36E2043D28965BDD00BBC1B9 /* WalleeApp.swift in Sources */,
 				36E204892896858900BBC1B9 /* DebugLogging.swift in Sources */,
+				36E2049F2899E2CA00BBC1B9 /* LoggrInitializer.swift in Sources */,
 				36E204792896793800BBC1B9 /* AccountDb+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

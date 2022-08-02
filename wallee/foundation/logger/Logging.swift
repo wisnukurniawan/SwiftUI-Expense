@@ -8,5 +8,5 @@
 import Foundation
 
 protocol Logging {
-    func log(priority: Log, message: String, error: Error?)
+    func log(tag: String, priority: LogLevel, message: String, error: Error?)
 }

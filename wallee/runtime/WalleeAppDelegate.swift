@@ -8,18 +8,21 @@
 import UIKit
 
 class WalleeAppDelegate: NSObject, UIApplicationDelegate {
+    
+    private lazy var initializers: [Initializer] = [
+        LoggrInitializer(),
+        PersistentSyncInitializer()
+    ]
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        initLoggr()
+        initializers.forEach { item in
+            _ = item.create(application: application)
+        }
         return true
     }
+    
+    
+    
 
-    private func initLoggr() {
-        #if DEBUG
-        let loggings: [Logging] = [DebugLogging()]
-        #else
-        let loggings: [Logging] = []
-        #endif
-
-        Loggr.initialize(loggings: loggings)
-    }
+    
 }

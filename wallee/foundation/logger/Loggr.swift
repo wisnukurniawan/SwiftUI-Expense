@@ -14,32 +14,34 @@ class Loggr {
         self.loggings = loggings
     }
 
-    static func debug(message: () -> Any?) {
-        log(priority: .debug, message: message)
+    static func debug(tag: String? = nil, message: () -> Any?) {
+        log(tag: tag, priority: .debug, message: message)
     }
     
-    static func info(message: () -> Any?) {
-        log(priority: .info, message: message)
+    static func info(tag: String? = nil, message: () -> Any?) {
+        log(tag: tag, priority: .info, message: message)
     }
     
-    static func notice(message: () -> Any?) {
-        log(priority: .notice, message: message)
+    static func notice(tag: String? = nil, message: () -> Any?) {
+        log(tag: tag, priority: .notice, message: message)
     }
 
-    static func error(error: Error? = nil, message: () -> Any?) {
-        log(priority: .error, message: message, error: error)
+    static func error(tag: String? = nil, error: Error? = nil, message: () -> Any?) {
+        log(tag: tag, priority: .error, message: message, error: error)
     }
 
-    static func record(error: Error? = nil, message: () -> Any?) {
-        log(priority: .fault, message: message, error: error)
+    static func record(tag: String? = nil, error: Error? = nil, message: () -> Any?) {
+        log(tag: tag, priority: .fault, message: message, error: error)
     }
 
     private static func log(
-        priority: Log,
+        tag: String?,
+        priority: LogLevel,
         message: () -> Any?,
         error: Error? = nil
     ) {
         log(
+            tag: tag ?? "Loggr",
             priority: priority,
             message: (message() as? String) ?? "",
             error: error
@@ -47,12 +49,13 @@ class Loggr {
     }
 
     private static func log(
-        priority: Log,
+        tag: String,
+        priority: LogLevel,
         message: String,
         error: Error? = nil
     ) {
         self.loggings.forEach {
-            $0.log(priority: priority, message: message, error: error)
+            $0.log(tag: tag, priority: priority, message: message, error: error)
         }
     }
 }
