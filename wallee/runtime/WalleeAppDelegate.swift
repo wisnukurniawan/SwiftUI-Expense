@@ -11,6 +11,7 @@ class WalleeAppDelegate: NSObject, UIApplicationDelegate {
     
     private lazy var initializers: [Initializer] = [
         LoggrInitializer(),
+        FireBaseInitializer(),
         PersistentSyncInitializer()
     ]
     

@@ -234,6 +234,7 @@
 				36E2043528965BDD00BBC1B9 /* Sources */,
 				36E2043628965BDD00BBC1B9 /* Frameworks */,
 				36E2043728965BDD00BBC1B9 /* Resources */,
+				36E204E7289A11D000BBC1B9 /* Firebase Script */,
 			);
 			buildRules = (
 			);
@@ -298,6 +299,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36E204E7289A11D000BBC1B9 /* Firebase Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Firebase Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "INFO_PLIST=GoogleService-Info.plist\nDEVELOPMENT_INFO_PLIST=${PROJECT_DIR}/${TARGET_NAME}/debug/${INFO_PLIST}\nRELEASE_INFO_PLIST=${PROJECT_DIR}/${TARGET_NAME}/release/${INFO_PLIST}\necho \"Checking ${INFO_PLIST} in ${DEVELOPMENT_INFO_PLIST}\"\nif [ ! -f $DEVELOPMENT_INFO_PLIST ] ; then\necho \"Development GoogleService-Info.plist not found.\"\nexit 1\nfi\necho \"Checking ${INFO_PLIST} in ${RELEASE_INFO_PLIST}\"\nif [ ! -f $RELEASE_INFO_PLIST ] ; then\necho \"Release GoogleService-Info.plist not found.\"\nexit 1\nfi\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Config ${CONFIGURATION}\"\necho \"Copying ${INFO_PLIST} to final destination: ${PLIST_DESTINATION}\"\nif [ \"${CONFIGURATION}\" == \"Release\" ] ; then\necho \"Copied ${RELEASE_INFO_PLIST}.\"\ncp \"${RELEASE_INFO_PLIST}\" \"${PLIST_DESTINATION}\"\nelse\necho \"Copied ${DEVELOPMENT_INFO_PLIST}.\"\ncp \"${DEVELOPMENT_INFO_PLIST}\" \"${PLIST_DESTINATION}\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		36E2043528965BDD00BBC1B9 /* Sources */ = {
