@@ -5,18 +5,20 @@
 //  Created by Wisnu Kurniawan on 03/08/22.
 //
 
+import Firebase
 import Foundation
-import UIKit
 import os
+import UIKit
 
 class LoggrInitializer: Initializer {
-
     func create(application: UIApplication) -> Bool {
         #if DEBUG
-        let loggings: [Logging] = [DebugLogging()]
+        var loggings: [Logging] = [DebugLogging()]
         #else
-        let loggings: [Logging] = []
+        var loggings: [Logging] = []
         #endif
+        
+        loggings.append(CrashLogging())
 
         Loggr.initialize(loggings: loggings)
 
@@ -39,6 +41,17 @@ class DebugLogging: Logging {
             logger.error("\(tag) - \(message), error: \(error?.localizedDescription ?? "")")
         case .fault:
             logger.fault("\(tag) - \(message), error: \(error?.localizedDescription ?? "")")
+        }
+    }
+}
+
+class CrashLogging: Logging {
+    func log(tag: String, priority: LogLevel, message: String, error: Error?) {
+        if priority == .fault {
+            Crashlytics.crashlytics().log(message)
+            if let err = error {
+                Crashlytics.crashlytics().record(error: err)
+            }
         }
     }
 }

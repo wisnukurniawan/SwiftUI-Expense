@@ -9,10 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-      
-        
         Button("Crash") {
-          fatalError("Crash was triggered")
+          fatalError("Crash test")
         }
     }
 }
