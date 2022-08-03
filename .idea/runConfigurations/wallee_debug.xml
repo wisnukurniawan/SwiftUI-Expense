@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="wallee debug" type="AppleRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-com.apple.CoreData.SQLDebug 4 -com.apple.CoreData.ConcurrencyDebug 1" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="wallee" TARGET_NAME="wallee" CONFIG_NAME="Debug" SCHEME_NAME="wallee debug" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_TARGET_PROJECT_NAME="wallee" RUN_TARGET_NAME="wallee" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+    <envs>
+      <env name="SQLITE_ENABLE_FILE_ASSERTIONS" value="1" />
+      <env name="SQLITE_ENABLE_THREAD_ASSERTIONS" value="1" />
+    </envs>
+    <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+      <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+    </EXTENSION>
+    <embedded_app_extension_list />
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>

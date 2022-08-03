@@ -23,7 +23,6 @@
 		36E2048328967DCA00BBC1B9 /* Loggr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2048228967DCA00BBC1B9 /* Loggr.swift */; };
 		36E2048528967E6E00BBC1B9 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2048428967E6E00BBC1B9 /* Logging.swift */; };
 		36E204872896825E00BBC1B9 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204862896825E00BBC1B9 /* LogLevel.swift */; };
-		36E204892896858900BBC1B9 /* DebugLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204882896858900BBC1B9 /* DebugLogging.swift */; };
 		36E2048C2896AC3E00BBC1B9 /* WalleeAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2048B2896AC3E00BBC1B9 /* WalleeAppDelegate.swift */; };
 		36E204922898B63600BBC1B9 /* LocalModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204912898B63600BBC1B9 /* LocalModule.swift */; };
 		36E204942898BC5800BBC1B9 /* PersistentSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204932898BC5800BBC1B9 /* PersistentSync.swift */; };
@@ -32,6 +31,12 @@
 		36E2049F2899E2CA00BBC1B9 /* LoggrInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2049E2899E2CA00BBC1B9 /* LoggrInitializer.swift */; };
 		36E204A12899E6D400BBC1B9 /* PersistentSyncInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204A02899E6D400BBC1B9 /* PersistentSyncInitializer.swift */; };
 		36E204A42899E93C00BBC1B9 /* Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204A32899E93C00BBC1B9 /* Initializer.swift */; };
+		36E204AF289A05B900BBC1B9 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 36E204AE289A05B900BBC1B9 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		36E204B1289A05B900BBC1B9 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 36E204B0289A05B900BBC1B9 /* FirebaseCrashlytics */; };
+		36E204B3289A05B900BBC1B9 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 36E204B2289A05B900BBC1B9 /* FirebasePerformance */; };
+		36E204B7289A09B700BBC1B9 /* FirebaseInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E204B6289A09B700BBC1B9 /* FirebaseInitializer.swift */; };
+		36E204E5289A109400BBC1B9 /* debug in Resources */ = {isa = PBXBuildFile; fileRef = 36E204E3289A109400BBC1B9 /* debug */; };
+		36E204E6289A109400BBC1B9 /* release in Resources */ = {isa = PBXBuildFile; fileRef = 36E204E4289A109400BBC1B9 /* release */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +57,6 @@
 		36E2048228967DCA00BBC1B9 /* Loggr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggr.swift; sourceTree = "<group>"; };
 		36E2048428967E6E00BBC1B9 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		36E204862896825E00BBC1B9 /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
-		36E204882896858900BBC1B9 /* DebugLogging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLogging.swift; sourceTree = "<group>"; };
 		36E2048B2896AC3E00BBC1B9 /* WalleeAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalleeAppDelegate.swift; sourceTree = "<group>"; };
 		36E2048F2896B47B00BBC1B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36E204912898B63600BBC1B9 /* LocalModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalModule.swift; sourceTree = "<group>"; };
@@ -62,6 +66,9 @@
 		36E2049E2899E2CA00BBC1B9 /* LoggrInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggrInitializer.swift; sourceTree = "<group>"; };
 		36E204A02899E6D400BBC1B9 /* PersistentSyncInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentSyncInitializer.swift; sourceTree = "<group>"; };
 		36E204A32899E93C00BBC1B9 /* Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializer.swift; sourceTree = "<group>"; };
+		36E204B6289A09B700BBC1B9 /* FirebaseInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseInitializer.swift; sourceTree = "<group>"; };
+		36E204E3289A109400BBC1B9 /* debug */ = {isa = PBXFileReference; lastKnownFileType = folder; path = debug; sourceTree = "<group>"; };
+		36E204E4289A109400BBC1B9 /* release */ = {isa = PBXFileReference; lastKnownFileType = folder; path = release; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +76,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36E204AF289A05B900BBC1B9 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				36E204B1289A05B900BBC1B9 /* FirebaseCrashlytics in Frameworks */,
+				36E204B3289A05B900BBC1B9 /* FirebasePerformance in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +104,8 @@
 		36E2043B28965BDD00BBC1B9 /* wallee */ = {
 			isa = PBXGroup;
 			children = (
+				36E204E3289A109400BBC1B9 /* debug */,
+				36E204E4289A109400BBC1B9 /* release */,
 				36E2044028965BDF00BBC1B9 /* Assets.xcassets */,
 				36E2044A28965DE300BBC1B9 /* foundation */,
 				36E2048A2896A73500BBC1B9 /* runtime */,
@@ -163,7 +175,6 @@
 				36E2048228967DCA00BBC1B9 /* Loggr.swift */,
 				36E2048428967E6E00BBC1B9 /* Logging.swift */,
 				36E204862896825E00BBC1B9 /* LogLevel.swift */,
-				36E204882896858900BBC1B9 /* DebugLogging.swift */,
 			);
 			path = logger;
 			sourceTree = "<group>";
@@ -198,6 +209,7 @@
 		36E2049D2899E2A500BBC1B9 /* initializer */ = {
 			isa = PBXGroup;
 			children = (
+				36E204B6289A09B700BBC1B9 /* FirebaseInitializer.swift */,
 				36E2049E2899E2CA00BBC1B9 /* LoggrInitializer.swift */,
 				36E204A02899E6D400BBC1B9 /* PersistentSyncInitializer.swift */,
 			);
@@ -228,6 +240,11 @@
 			dependencies = (
 			);
 			name = wallee;
+			packageProductDependencies = (
+				36E204AE289A05B900BBC1B9 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				36E204B0289A05B900BBC1B9 /* FirebaseCrashlytics */,
+				36E204B2289A05B900BBC1B9 /* FirebasePerformance */,
+			);
 			productName = wallee;
 			productReference = 36E2043928965BDD00BBC1B9 /* wallee.app */;
 			productType = "com.apple.product-type.application";
@@ -256,6 +273,9 @@
 				Base,
 			);
 			mainGroup = 36E2043028965BDD00BBC1B9;
+			packageReferences = (
+				36E204AD289A05B900BBC1B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 36E2043A28965BDD00BBC1B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -270,6 +290,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36E204E6289A109400BBC1B9 /* release in Resources */,
+				36E204E5289A109400BBC1B9 /* debug in Resources */,
 				36E2044428965BDF00BBC1B9 /* Preview Assets.xcassets in Resources */,
 				36E2044128965BDF00BBC1B9 /* Assets.xcassets in Resources */,
 			);
@@ -294,6 +316,7 @@
 				36E2043F28965BDD00BBC1B9 /* ContentView.swift in Sources */,
 				36E204922898B63600BBC1B9 /* LocalModule.swift in Sources */,
 				36E2048C2896AC3E00BBC1B9 /* WalleeAppDelegate.swift in Sources */,
+				36E204B7289A09B700BBC1B9 /* FirebaseInitializer.swift in Sources */,
 				36E204962898C28400BBC1B9 /* LocalError.swift in Sources */,
 				36E204872896825E00BBC1B9 /* LogLevel.swift in Sources */,
 				36E204A12899E6D400BBC1B9 /* PersistentSyncInitializer.swift in Sources */,
@@ -302,7 +325,6 @@
 				36E204802896793800BBC1B9 /* AccountRecordDb+CoreDataProperties.swift in Sources */,
 				36E2048328967DCA00BBC1B9 /* Loggr.swift in Sources */,
 				36E2043D28965BDD00BBC1B9 /* WalleeApp.swift in Sources */,
-				36E204892896858900BBC1B9 /* DebugLogging.swift in Sources */,
 				36E2049F2899E2CA00BBC1B9 /* LoggrInitializer.swift in Sources */,
 				36E204792896793800BBC1B9 /* AccountDb+CoreDataClass.swift in Sources */,
 			);
@@ -452,7 +474,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wisnu.kurniawan.wallee;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wisnu.kurniawan.wallee.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -513,6 +535,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		36E204AD289A05B900BBC1B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		36E204AE289A05B900BBC1B9 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36E204AD289A05B900BBC1B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		36E204B0289A05B900BBC1B9 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36E204AD289A05B900BBC1B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		36E204B2289A05B900BBC1B9 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36E204AD289A05B900BBC1B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		36E2044E2896606200BBC1B9 /* WalleeDb.xcdatamodeld */ = {
