@@ -235,6 +235,7 @@
 				36E2043628965BDD00BBC1B9 /* Frameworks */,
 				36E2043728965BDD00BBC1B9 /* Resources */,
 				36E204E7289A11D000BBC1B9 /* Firebase Script */,
+				36E204E9289A573300BBC1B9 /* Crashlytics Script */,
 			);
 			buildRules = (
 			);
@@ -319,6 +320,26 @@
 			shellPath = /bin/sh;
 			shellScript = "INFO_PLIST=GoogleService-Info.plist\nDEVELOPMENT_INFO_PLIST=${PROJECT_DIR}/${TARGET_NAME}/debug/${INFO_PLIST}\nRELEASE_INFO_PLIST=${PROJECT_DIR}/${TARGET_NAME}/release/${INFO_PLIST}\necho \"Checking ${INFO_PLIST} in ${DEVELOPMENT_INFO_PLIST}\"\nif [ ! -f $DEVELOPMENT_INFO_PLIST ] ; then\necho \"Development GoogleService-Info.plist not found.\"\nexit 1\nfi\necho \"Checking ${INFO_PLIST} in ${RELEASE_INFO_PLIST}\"\nif [ ! -f $RELEASE_INFO_PLIST ] ; then\necho \"Release GoogleService-Info.plist not found.\"\nexit 1\nfi\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Config ${CONFIGURATION}\"\necho \"Copying ${INFO_PLIST} to final destination: ${PLIST_DESTINATION}\"\nif [ \"${CONFIGURATION}\" == \"Release\" ] ; then\necho \"Copied ${RELEASE_INFO_PLIST}.\"\ncp \"${RELEASE_INFO_PLIST}\" \"${PLIST_DESTINATION}\"\nelse\necho \"Copied ${DEVELOPMENT_INFO_PLIST}.\"\ncp \"${DEVELOPMENT_INFO_PLIST}\" \"${PLIST_DESTINATION}\"\nfi\n";
 		};
+		36E204E9289A573300BBC1B9 /* Crashlytics Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "Crashlytics Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#  Figure out where we're being called from\nDIR=$( cd \"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics\" && pwd )\n\n#  Build up the arguments list, passing through any flags added, and quoting\n#  every argument in case there are spaces in any of the paths.\nARGUMENTS=''\nfor i in \"$@\"; do\n  ARGUMENTS=\"$ARGUMENTS \\\"$i\\\"\"\ndone\n\nVALIDATE_ARGUMENTS=\"$ARGUMENTS --build-phase --validate\"\nUPLOAD_ARGUMENTS=\"$ARGUMENTS --build-phase\"\n\n# Quote the path to handle folders with special characters\necho \"Upload symbols dir: ${DIR}\"\nCOMMAND_PATH=\"\\\"$DIR/upload-symbols\\\" \"\n\n#  Ensure params are as expected, run in sync mode to validate,\n#  and cause a build error if validation fails\neval $COMMAND_PATH$VALIDATE_ARGUMENTS\nreturn_code=$?\n\nif [[ $return_code != 0 ]]; then\n  exit $return_code\nfi\n\n#  Verification passed, convert and upload dSYMs in the background to prevent\n#  build delays\n#\n#  Note: Validation is performed again at this step before upload\n#\n#  Note: Output can still be found in Console.app, by searching for\n#        \"upload-symbols\"\n#\neval $COMMAND_PATH$UPLOAD_ARGUMENTS > /dev/null 2>&1 &\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -390,7 +411,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -481,6 +502,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"wallee/Preview Content\"";
 				DEVELOPMENT_TEAM = Y225V8UXTQ;
 				ENABLE_PREVIEWS = YES;
@@ -496,6 +518,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wisnu.kurniawan.wallee.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -527,6 +551,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wisnu.kurniawan.wallee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
