@@ -11,3 +11,7 @@ struct Currency {
     var currencyCode: String
     var countryCode: String
 }
+
+extension Currency {
+    static let defaultValue = Currency(currencyCode: "USD", countryCode: "US")
+}

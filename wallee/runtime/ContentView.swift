@@ -15,11 +15,7 @@ struct ContentView: View {
     // Create UI first
     
     var body: some View {
-        VStack {
-            Button("Create transaction") {
-                
-            }
-        }
+        TransactionDetailScreen()
     }
 }
 

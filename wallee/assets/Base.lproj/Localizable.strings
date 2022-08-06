@@ -1,0 +1,114 @@
+/* 
+ Localizable.strings
+ wallee
+ 
+ Created by Wisnu Kurniawan on 06/08/22.
+ 
+ */
+"show_more"="Show More";
+"add"="Add";
+"welcome"="Welcome!";
+
+"category"="Category";
+"category_monthly_fee"="Monthly fee";
+"category_admin_fee"="Admin fee";
+"category_pets"="Pet care";
+"category_donations"="Donation & social";
+"category_education"="Education";
+"category_financial"="Financial & money";
+"category_entertainment"="Entertainment";
+"category_children_needs"="Children needs";
+"category_household_needs"="Household needs";
+"category_sport"="Health & sport";
+"category_others"="Others";
+"category_food"="Food & drink";
+"category_parking"="Parking";
+"category_fuel"="Gas";
+"category_movie"="Watch movie";
+"category_automotive"="Automotive";
+"category_tax"="Tax";
+"category_income"="Income";
+"category_business_expenses"="Business expenses";
+"category_self_care"="Self care";
+"category_loan"="Loan";
+"category_service"="Service";
+"category_shopping"="Shopping";
+"category_bills"="Bills & utility";
+"category_taxi"="Taxi";
+"category_cash_withdrawal"="Cash withdrawal";
+"category_phone"="Phone & internet";
+"category_top_up"="E-wallet";
+"category_public_transportation"="Public transportation";
+"category_travel"="Travel";
+"category_uncategorized"="Uncategorized";
+
+"account_e_wallet"="E-wallet";
+"account_bank"="Bank";
+"account_cash"="Cash";
+"account_investment"="Investment";
+"account_others"="Others";
+
+"setting_title"="Main menu";
+"setting_language"="Language";
+"setting_language_english"="English";
+"setting_language_indonesia"="Bahasa Indonesia";
+
+"dashboard_transaction"="Transaction";
+"dashboard_balance"="Balance";
+
+"transaction_expense"="Expense";
+"transaction_income"="Income";
+"transaction_transfer"="Transfer";
+"transaction_edit_save"="Save";
+"transaction_edit_cancel"="Cancel";
+"transaction_edit_add"="Add Transaction";
+"transaction_edit_expense"="Edit Expense";
+"transaction_edit_income"="Edit Income";
+"transaction_edit_transfer"="Edit Transfer";
+"transaction_edit_total"="Total";
+"transaction_edit_general"="General";
+"transaction_edit_account"="Account";
+"transaction_edit_account_from"="Account from";
+"transaction_edit_account_to"="Account to";
+"transaction_edit_date_transaction"="Transaction date";
+"transaction_edit_note"="Note (Optional)";
+"transaction_edit_note_expense_hint"="Example \"Buy fried chicken & tea\"";
+"transaction_edit_note_income_hint"="Example \"For saving\"";
+"transaction_edit_note_transfer_hint"="Example \"For subscription this month\"";
+"transaction_summary"="Summary";
+"transaction_cash_flow"="Cash Flow";
+"transaction_this_month"="This Month";
+"transaction_last"="Last Transaction";
+"transaction_last_no_data_title"="Keep Creating Transaction";
+"transaction_last_no_data_message"="It will show your last 5 transactions.";
+"transaction_top_expenses"="Top Expenses";
+"transaction_top_expenses_no_data_message"="It will show your 5 top expense this month group by category.";
+"transaction_edit_delete"="Delete Transaction";
+"transaction_account_deleted"="[Account deleted]";
+
+"all_transaction_headline"="Transactions";
+"all_transaction_empty"="No transactions";
+
+"account_edit_add"="Add Account";
+"account_edit_edit"="Edit Account";
+"account_edit_balance"="Current balance";
+"account_edit_select_category"="Select Category";
+"account_edit_name"="Name";
+"account_edit_name_hint"="Required";
+"account_edit_name_duplicate"="You already have account with this name";
+"account_edit_delete"="Delete Account";
+
+"balance_all_time"="All the time";
+"balance_total_transaction"="%1$@ transactions";
+"balance_account_updated_at_second"="Updated a few moments ago";
+"balance_account_updated_at_minute"="Updated %1$@ minutes ago";
+"balance_account_updated_at_hour"="Updated %1$@ hours ago";
+"balance_account_updated_at_yesterday"="Updated yesterday";
+"balance_account_updated_at_date"="Updated %1$@";
+"balance_account_amount_change_title"="Reason adjust balance";
+"balance_account_amount_change_initial_reason"="Haven\'t tracked for a long time";
+"balance_account_amount_change_initial_reason_desc"="Will change the initial balance on your account.";
+"balance_account_amount_change_by_record_reason"="Forgot to track a few transactions";
+"balance_account_amount_change_by_record_reason_desc"="Will create a correction transaction for it.";
+
+"onboarding_title"="Choose your country currency";

@@ -1,0 +1,111 @@
+/* 
+ Localizable.strings
+ wallee
+ 
+ Created by Wisnu Kurniawan on 06/08/22.
+ 
+ */
+"show_more"="Lihat Semua";
+"add"="Tambah";
+"welcome"="Selamat Datang!";
+
+"category"="Kategori";
+"category_monthly_fee"="Belanja bulanan";
+"category_admin_fee"="Biaya admin";
+"category_pets"="Binatang peliharaan";
+"category_donations"="Donasi & sosial";
+"category_education"="Edukasi";
+"category_financial"="Finansial & keuangan";
+"category_entertainment"="Hiburan";
+"category_children_needs"="Kebutuhan anak";
+"category_household_needs"="Kebutuhan rumah";
+"category_sport"="Kesehatan & olahraga";
+"category_others"="Lainnya";
+"category_food"="Makanan & minuman";
+"category_parking"="Parkir";
+"category_fuel"="Bahan bakar";
+"category_movie"="Nonton bioskop";
+"category_automotive"="Otomotif";
+"category_tax"="Pajak";
+"category_income"="Pemasukan";
+"category_business_expenses"="Pengeluaran bisnis";
+"category_self_care"="Perawatan diri";
+"category_loan"="Pinjaman";
+"category_service"="Servis jasa";
+"category_shopping"="Belanja";
+"category_bills"="Tagihan & utilitas";
+"category_taxi"="Taksi & ojek";
+"category_cash_withdrawal"="Tarik cash";
+"category_phone"="Pulsa & paket internet";
+"category_top_up"="Top up e-wallet";
+"category_public_transportation"="Transportasi publik";
+"category_travel"="Travel";
+"category_uncategorized"="Tidak terkategori";
+
+"account_e_wallet"="E-wallet";
+"account_bank"="Bank";
+"account_cash"="Cash";
+"account_investment"="Investasi";
+"account_others"="Lainnya";
+
+"setting_title"="Menu utama";
+"setting_language"="Bahasa";
+
+"dashboard_transaction"="Transaksi";
+"dashboard_balance"="Saldo";
+
+"transaction_expense"="Pengeluaran";
+"transaction_income"="Pemasukan";
+"transaction_transfer"="Transfer";
+"transaction_edit_save"="Simpan";
+"transaction_edit_cancel"="Batal";
+"transaction_edit_add"="Tambah Transaksi";
+"transaction_edit_expense"="Edit Pengeluaran";
+"transaction_edit_income"="Edit Pemasukan";
+"transaction_edit_transfer"="Edit Transfer";
+"transaction_edit_total"="Jumlah";
+"transaction_edit_general"="Rincian tambahan";
+"transaction_edit_account"="Akun";
+"transaction_edit_account_from"="Akun asal";
+"transaction_edit_account_to"="Akun tujuan";
+"transaction_edit_date_transaction"="Tanggal transaksi";
+"transaction_edit_note"="Catatan (Opsional)";
+"transaction_edit_note_expense_hint"="Contoh \"Beli ayam goreng & es teh\"";
+"transaction_edit_note_income_hint"="Contoh \"Untuk tabungan\"";
+"transaction_edit_note_transfer_hint"="Contoh \"Untuk subscription bulan ini\"";
+"transaction_summary"="Ringkasan";
+"transaction_this_month"="Bulan Ini";
+"transaction_last"="Transaksi Terakhir";
+"transaction_last_no_data_title"="Terus Catat Transaksi";
+"transaction_last_no_data_message"="Ini akan menampilkan 5 transaksi terakhir.";
+"transaction_top_expenses"="Pengeluaran Terbanyak";
+"transaction_top_expenses_no_data_message"="Ini akan menampilkan 5 pengeluaran terbanyak pada bulan ini berdasarkan kategori.";
+"transaction_edit_delete"="Hapus Transaksi";
+"transaction_account_deleted"="[Akun dihapus]";
+
+"all_transaction_headline"="Semua Transaksi";
+"all_transaction_empty"="Belum ada transaksi";
+
+"account_edit_add"="Tambah akun";
+"account_edit_edit"="Edit akun";
+"account_edit_balance"="Saldo saat ini";
+"account_edit_select_category"="Pilih Kategori";
+"account_edit_name"="Nama";
+"account_edit_name_hint"="Wajib";
+"account_edit_name_duplicate"="Kamu udah punya akun dengan nama ini";
+"account_edit_delete"="Hapus Akun";
+
+"balance_all_time"="Sepanjang waktu";
+"balance_total_transaction"="%1$@ transaksi";
+"balance_account_updated_at_second"="Terakhir diupdate beberapa menit yang lalu";
+"balance_account_updated_at_minute"="Terakhir diupdate %1$@ menit yang lalu";
+"balance_account_updated_at_hour"="Terakhir diupdate %1$@ jam yang lalu";
+"balance_account_updated_at_yesterday"="Terakhir diupdate kemarin";
+"balance_account_updated_at_date"="Terakhir diupdate %1$@";
+"balance_account_amount_change_title"="Alasan perubahan saldo";
+"balance_account_amount_change_initial_reason"="Udah lama tidak mencatat transaksi";
+"balance_account_amount_change_initial_reason_desc"="Akan mengubah saldo awal di akun kamu.";
+"balance_account_amount_change_by_record_reason"="Lupa mencatat beberapa transaksi";
+"balance_account_amount_change_by_record_reason_desc"="Akan membuat catatan transaski otomatis.";
+
+"onboarding_title"="Pilih mata uang negara kamu";
