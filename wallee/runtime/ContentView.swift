@@ -5,12 +5,20 @@
 //  Created by Wisnu Kurniawan on 31/07/22.
 //
 
+import CoreData
 import SwiftUI
 
 struct ContentView: View {
+    // TODO
+    // insert transaction into an account
+    // show an account with transaction list
+    // Create UI first
+    
     var body: some View {
-        Button("Crash") {
-            
+        VStack {
+            Button("Create transaction") {
+                
+            }
         }
     }
 }

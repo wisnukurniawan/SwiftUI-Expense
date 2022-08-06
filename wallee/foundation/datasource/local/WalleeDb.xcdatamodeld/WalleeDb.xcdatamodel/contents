@@ -45,7 +45,7 @@
         <relationship name="transaction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TransactionDb" inverseName="transactionRecords" inverseEntity="TransactionDb"/>
     </entity>
     <elements>
-        <element name="AccountDb" positionX="-690.8392333984375" positionY="-354.1044006347656" width="128" height="193"/>
+        <element name="AccountDb" positionX="-690.8392333984375" positionY="-354.1044006347656" width="128" height="179"/>
         <element name="AccountRecordDb" positionX="-469.978515625" positionY="-282.1817932128906" width="128" height="103"/>
         <element name="TransactionDb" positionX="-466.918212890625" positionY="-82.66180419921875" width="128" height="238"/>
         <element name="TransactionRecordDb" positionX="-142.302490234375" positionY="63.19158935546875" width="128" height="103"/>
