@@ -1,6 +1,6 @@
 ## SwiftUI playground: Expense Tracker
 
-<img src="wallee/Assets.xcassets/AppIcon.appiconset/App_store_1024_1x.png" width="140">
+<img src="wallee/assets/Assets.xcassets/AppIcon.appiconset/App_store_1024_1x.png" width="140">
 
 SwiftUI playground for learning purpose
 
