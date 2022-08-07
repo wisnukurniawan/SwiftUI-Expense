@@ -8,7 +8,7 @@
 import Foundation
 
 struct TransactionRecord {
-    var id: String
+    var id: UUID
     var transactionId: String
     var amount: Decimal
     var createdAt: Date

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TransactionType {
+enum TransactionType: Equatable {
     case income
     case expense
     case transfer

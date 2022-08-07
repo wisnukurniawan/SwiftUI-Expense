@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Account {
+struct Account: Equatable {
     var id: UUID
     var currency: Currency
     var amount: Decimal

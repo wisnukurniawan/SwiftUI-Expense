@@ -20,12 +20,15 @@
 		36AB129E289E112D00436DE5 /* TransactionWithAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB129D289E112D00436DE5 /* TransactionWithAccount.swift */; };
 		36AB12A1289E164500436DE5 /* LanguageCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB12A0289E164500436DE5 /* LanguageCode.swift */; };
 		36AB12A9289E192700436DE5 /* TransactionDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB12A8289E192700436DE5 /* TransactionDetailScreen.swift */; };
-		36AB12AD289E3DC400436DE5 /* TransactionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB12AC289E3DC400436DE5 /* TransactionDetailViewModel.swift */; };
-		36AB12AF289E3E9900436DE5 /* TransactionDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB12AE289E3E9900436DE5 /* TransactionDetailState.swift */; };
+		36AB12AF289E3E9900436DE5 /* TransactionDetailCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB12AE289E3E9900436DE5 /* TransactionDetailCore.swift */; };
 		36AB12B5289E436A00436DE5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36AB12B3289E436A00436DE5 /* Localizable.strings */; };
 		36AB12B8289E437C00436DE5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36AB12B6289E437C00436DE5 /* Localizable.strings */; };
 		36AB12BB289E4DD400436DE5 /* TransactionDetailEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB12BA289E4DD400436DE5 /* TransactionDetailEffect.swift */; };
-		36AB12BD289E4DE300436DE5 /* TransactionDetailAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB12BC289E4DE300436DE5 /* TransactionDetailAction.swift */; };
+		36AB12C3289E997B00436DE5 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 36AB12C2289E997B00436DE5 /* ComposableArchitecture */; };
+		36AB12C6289F2DCB00436DE5 /* Account+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB12C5289F2DCB00436DE5 /* Account+Ext.swift */; };
+		36AB12C8289F2EB300436DE5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB12C7289F2EB300436DE5 /* Constant.swift */; };
+		36AB12CA289F2F4A00436DE5 /* Currency+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB12C9289F2F4A00436DE5 /* Currency+Ext.swift */; };
+		36AB12CC289F336B00436DE5 /* Amount+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB12CB289F336B00436DE5 /* Amount+Ext.swift */; };
 		36E2043D28965BDD00BBC1B9 /* WalleeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2043C28965BDD00BBC1B9 /* WalleeApp.swift */; };
 		36E2043F28965BDD00BBC1B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2043E28965BDD00BBC1B9 /* ContentView.swift */; };
 		36E2044128965BDF00BBC1B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36E2044028965BDF00BBC1B9 /* Assets.xcassets */; };
@@ -72,13 +75,15 @@
 		36AB129D289E112D00436DE5 /* TransactionWithAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionWithAccount.swift; sourceTree = "<group>"; };
 		36AB12A0289E164500436DE5 /* LanguageCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCode.swift; sourceTree = "<group>"; };
 		36AB12A8289E192700436DE5 /* TransactionDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailScreen.swift; sourceTree = "<group>"; };
-		36AB12AC289E3DC400436DE5 /* TransactionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewModel.swift; sourceTree = "<group>"; };
-		36AB12AE289E3E9900436DE5 /* TransactionDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailState.swift; sourceTree = "<group>"; };
+		36AB12AE289E3E9900436DE5 /* TransactionDetailCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailCore.swift; sourceTree = "<group>"; };
 		36AB12B4289E436A00436DE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Localizable.strings; sourceTree = "<group>"; };
 		36AB12B7289E437C00436DE5 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = Localizable.strings; sourceTree = "<group>"; };
 		36AB12B9289E438D00436DE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		36AB12BA289E4DD400436DE5 /* TransactionDetailEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailEffect.swift; sourceTree = "<group>"; };
-		36AB12BC289E4DE300436DE5 /* TransactionDetailAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailAction.swift; sourceTree = "<group>"; };
+		36AB12C5289F2DCB00436DE5 /* Account+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Ext.swift"; sourceTree = "<group>"; };
+		36AB12C7289F2EB300436DE5 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		36AB12C9289F2F4A00436DE5 /* Currency+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+Ext.swift"; sourceTree = "<group>"; };
+		36AB12CB289F336B00436DE5 /* Amount+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Amount+Ext.swift"; sourceTree = "<group>"; };
 		36E2043928965BDD00BBC1B9 /* wallee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E2043C28965BDD00BBC1B9 /* WalleeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalleeApp.swift; sourceTree = "<group>"; };
 		36E2043E28965BDD00BBC1B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +122,7 @@
 			files = (
 				36E204AF289A05B900BBC1B9 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				36E204B1289A05B900BBC1B9 /* FirebaseCrashlytics in Frameworks */,
+				36AB12C3289E997B00436DE5 /* ComposableArchitecture in Frameworks */,
 				36E204B3289A05B900BBC1B9 /* FirebasePerformance in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,10 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				36AB12A8289E192700436DE5 /* TransactionDetailScreen.swift */,
-				36AB12AC289E3DC400436DE5 /* TransactionDetailViewModel.swift */,
-				36AB12AE289E3E9900436DE5 /* TransactionDetailState.swift */,
+				36AB12AE289E3E9900436DE5 /* TransactionDetailCore.swift */,
 				36AB12BA289E4DD400436DE5 /* TransactionDetailEffect.swift */,
-				36AB12BC289E4DE300436DE5 /* TransactionDetailAction.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -226,6 +230,17 @@
 				36AB12B6289E437C00436DE5 /* Localizable.strings */,
 			);
 			path = id.lproj;
+			sourceTree = "<group>";
+		};
+		36AB12C4289F2DAD00436DE5 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				36AB12C7289F2EB300436DE5 /* Constant.swift */,
+				36AB12C5289F2DCB00436DE5 /* Account+Ext.swift */,
+				36AB12C9289F2F4A00436DE5 /* Currency+Ext.swift */,
+				36AB12CB289F336B00436DE5 /* Amount+Ext.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 		36E2043028965BDD00BBC1B9 = {
@@ -271,6 +286,7 @@
 		36E2044A28965DE300BBC1B9 /* foundation */ = {
 			isa = PBXGroup;
 			children = (
+				36AB12C4289F2DAD00436DE5 /* extension */,
 				36AB129F289E163300436DE5 /* localization */,
 				36E2048128967D9E00BBC1B9 /* logger */,
 				36E2044B28965E0100BBC1B9 /* datasource */,
@@ -392,6 +408,7 @@
 				36E204AE289A05B900BBC1B9 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				36E204B0289A05B900BBC1B9 /* FirebaseCrashlytics */,
 				36E204B2289A05B900BBC1B9 /* FirebasePerformance */,
+				36AB12C2289E997B00436DE5 /* ComposableArchitecture */,
 			);
 			productName = wallee;
 			productReference = 36E2043928965BDD00BBC1B9 /* wallee.app */;
@@ -424,6 +441,7 @@
 			mainGroup = 36E2043028965BDD00BBC1B9;
 			packageReferences = (
 				36E204AD289A05B900BBC1B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				36AB12C1289E997B00436DE5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 36E2043A28965BDD00BBC1B9 /* Products */;
 			projectDirPath = "";
@@ -509,25 +527,27 @@
 				36E2047F2896793800BBC1B9 /* AccountRecordDb+CoreDataClass.swift in Sources */,
 				36AB1289289E109600436DE5 /* Account.swift in Sources */,
 				36E204992898FE8400BBC1B9 /* NSPersistentContainer+Extension.swift in Sources */,
-				36AB12AD289E3DC400436DE5 /* TransactionDetailViewModel.swift in Sources */,
 				36AB12A1289E164500436DE5 /* LanguageCode.swift in Sources */,
 				36AB1290289E10D200436DE5 /* CategoryType.swift in Sources */,
 				36E2047D2896793800BBC1B9 /* TransactionRecordDb+CoreDataClass.swift in Sources */,
 				36E2047A2896793800BBC1B9 /* AccountDb+CoreDataProperties.swift in Sources */,
 				36E2047C2896793800BBC1B9 /* TransactionDb+CoreDataProperties.swift in Sources */,
 				36AB1292289E10E000436DE5 /* Currency.swift in Sources */,
+				36AB12CC289F336B00436DE5 /* Amount+Ext.swift in Sources */,
 				36E2043F28965BDD00BBC1B9 /* ContentView.swift in Sources */,
 				36E204922898B63600BBC1B9 /* LocalModule.swift in Sources */,
 				36E2048C2896AC3E00BBC1B9 /* WalleeAppDelegate.swift in Sources */,
 				36E204B7289A09B700BBC1B9 /* FirebaseInitializer.swift in Sources */,
-				36AB12AF289E3E9900436DE5 /* TransactionDetailState.swift in Sources */,
+				36AB12AF289E3E9900436DE5 /* TransactionDetailCore.swift in Sources */,
 				36E204962898C28400BBC1B9 /* LocalError.swift in Sources */,
 				36E204872896825E00BBC1B9 /* LogLevel.swift in Sources */,
 				36AB1298289E110900436DE5 /* Transaction.swift in Sources */,
+				36AB12C8289F2EB300436DE5 /* Constant.swift in Sources */,
 				36E204A12899E6D400BBC1B9 /* PersistentSyncInitializer.swift in Sources */,
 				36AB129A289E111500436DE5 /* TransactionRecord.swift in Sources */,
+				36AB12CA289F2F4A00436DE5 /* Currency+Ext.swift in Sources */,
 				36E204502896606200BBC1B9 /* WalleeDb.xcdatamodeld in Sources */,
-				36AB12BD289E4DE300436DE5 /* TransactionDetailAction.swift in Sources */,
+				36AB12C6289F2DCB00436DE5 /* Account+Ext.swift in Sources */,
 				36E204A42899E93C00BBC1B9 /* Initializer.swift in Sources */,
 				36E204802896793800BBC1B9 /* AccountRecordDb+CoreDataProperties.swift in Sources */,
 				36E2048328967DCA00BBC1B9 /* Loggr.swift in Sources */,
@@ -773,6 +793,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		36AB12C1289E997B00436DE5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
 		36E204AD289A05B900BBC1B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -784,6 +812,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		36AB12C2289E997B00436DE5 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36AB12C1289E997B00436DE5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
 		36E204AE289A05B900BBC1B9 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 36E204AD289A05B900BBC1B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

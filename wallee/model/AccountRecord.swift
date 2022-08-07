@@ -8,7 +8,7 @@
 import Foundation
 
 struct AccountRecord {
-    var id: String
+    var id: UUID
     var accountId: String
     var amount: Decimal
     var createdAt: Date

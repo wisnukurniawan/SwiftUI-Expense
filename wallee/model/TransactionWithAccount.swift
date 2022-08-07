@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TransactionWithAccount {
+struct TransactionWithAccount: Equatable {
     var transaction: Transaction
     var account: Account
     var transferAccount: Account? = nil

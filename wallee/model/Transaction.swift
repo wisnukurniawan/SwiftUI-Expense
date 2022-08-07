@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Transaction {
-    var id: String
+struct Transaction: Equatable {
+    var id: UUID
     var currency: Currency
     var categoryType: CategoryType
     var amount: Decimal
