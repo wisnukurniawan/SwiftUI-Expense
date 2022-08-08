@@ -19,7 +19,7 @@ public struct TransactionDetailState: Equatable {
     var selectedTransferAccount: Account? = nil
     
     var category: CategoryType = .others
-    var totalAmount: Decimal = Decimal.zero
+    var totalAmount: String = "0"
     var note: String = ""
     var currency: Currency = .defaultValue
     var transactionDate: Date = .init()
@@ -41,7 +41,6 @@ enum TransactionDetailAction: Equatable {
     case selectTransactionType(TransactionType)
     
     case totalAmountChange(String)
-    case totalAmountFocusChange(Bool)
 
     case selectAccount(Account)
     case selectTransferAccount(Account)
@@ -92,7 +91,7 @@ let transactionDetailReducer = Reducer<TransactionDetailState, TransactionDetail
         state.transactionType = transaction?.transaction.type ?? .expense
         state.category = transaction?.transaction.categoryType ?? .others
         state.note = transaction?.transaction.note ?? ""
-        state.totalAmount = transaction?.transaction.amount.asDisplay() ?? Decimal.zero
+        state.totalAmount = "\(transaction?.transaction.amount ?? 0)"
         state.transactionDate = transaction?.transaction.date ?? environment.date()
         state.transactionCreatedAt = transaction?.transaction.createdAt ?? environment.date()
         state.transactionUpdatedAt = transaction?.transaction.updatedAt
@@ -114,9 +113,7 @@ let transactionDetailReducer = Reducer<TransactionDetailState, TransactionDetail
         return .none
 
     case let .totalAmountChange(totalAmount):
-        state.totalAmount = Decimal(string: totalAmount) ?? Decimal.zero
-        return .none
-    case .totalAmountFocusChange:
+        state.totalAmount = totalAmount
         return .none
         
     case let .changeNote(note):

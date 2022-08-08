@@ -48,7 +48,7 @@ struct ContentView: View {
                                   Effect(
                                     value: TransactionWithAccount(
                                         transaction: Transaction(
-                                            id: UUID(), currency: Currency.defaultValue, categoryType: .uncategorized, amount: Decimal.zero, type: .transfer, date: Date(), createdAt: Date(), note: ""
+                                            id: UUID(), currency: Currency.defaultValue, categoryType: .uncategorized, amount: Decimal(9999925), type: .transfer, date: Date(), createdAt: Date(), note: ""
                                         ),
                                         account: Account.empty,
                                         transferAccount: Account.dummy2
@@ -57,7 +57,7 @@ struct ContentView: View {
                               }
                             )
                           ),
-                        transactionId: nil // Account.defaultId
+                        transactionId: Account.defaultId
                     )
                 }
         }

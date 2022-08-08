@@ -8,3 +8,10 @@
 import Foundation
 
 let zeroAmount = "0"
+
+func getAmountNumberFormatter() -> NumberFormatter {
+    let numberFormatter = NumberFormatter()
+    numberFormatter.numberStyle = .currency
+    numberFormatter.maximumFractionDigits = 2
+    return numberFormatter
+}

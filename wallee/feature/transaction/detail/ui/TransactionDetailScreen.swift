@@ -12,7 +12,7 @@ struct TransactionDetailScreen: View {
     
     let store: Store<TransactionDetailState, TransactionDetailAction>
     let transactionId: UUID?
-    
+
     struct ViewState: Equatable {
         var isEditMode: Bool
         var transactionType: TransactionType
@@ -35,7 +35,7 @@ struct TransactionDetailScreen: View {
             self.transactionType = state.transactionType
             self.title = getTitle(isEditMode: self.isEditMode, transactionType: state.transactionType)
             self.noteHint = getNoteHint(transactionType: state.transactionType)
-            self.totalAmount = "\(state.totalAmount)"
+            self.totalAmount = state.totalAmount
             self.note = state.note
             self.accountTitle = getAccountTitle(transactionType: state.transactionType)
             
@@ -71,9 +71,7 @@ struct TransactionDetailScreen: View {
                 Form {
                     // Amount section
                     Section {
-                        // TODO: currency prefix, text color based on type, formatting
-                        TextField("0", text: viewStore.binding(get: \.totalAmount, send: TransactionDetailAction.totalAmountChange))
-                            .keyboardType(.numberPad)
+                        TextField("0", text: viewStore.binding(get: \.totalAmount, send: TransactionDetailAction.totalAmountChange)).keyboardType(.numberPad)
                     } header: {
                         Text(LocalizedStringKey("transaction_edit_total"))
                     }
@@ -115,9 +113,8 @@ struct TransactionDetailScreen: View {
                             Picker(LocalizedStringKey("category"), selection: viewStore.binding(get: \.category, send: TransactionDetailAction.selectCategory)) {
                                 ForEach(CategoryType.allCases, id: \.self) { item in
                                     let (emoji, text) = item.getEmojiAndText()
-                                    HStack {
+                                    HStack(spacing: 4) {
                                         Text(LocalizedStringKey(text))
-                                        Spacer().frame(width: 4)
                                         Text(emoji)
                                     }.tag(item)
                                 }
