@@ -5,8 +5,9 @@
 //  Created by Wisnu Kurniawan on 06/08/22.
 //
 
-import ComposableArchitecture
+import Combine
 import Foundation
+import SwiftUI
 
 // MARK: - State
 
@@ -15,7 +16,7 @@ public struct TransactionDetailState: Equatable {
     var transactionType: TransactionType = .expense
     
     var accounts: [Account] = []
-    var selectedAccount: Account = Account.empty
+    var selectedAccount: Account = .empty
     var selectedTransferAccount: Account? = nil
     
     var category: CategoryType = .others
@@ -28,13 +29,101 @@ public struct TransactionDetailState: Equatable {
     var datePickerShown: Bool = false
 }
 
+// MARK: - Derived
+
+extension TransactionDetailState {
+    func isEditMode() -> Bool {
+        return transactionId != nil
+    }
+    
+    func getTitle() -> LocalizedStringKey {
+        return getTitle(isEditMode: isEditMode(), transactionType: transactionType)
+    }
+    
+    func getNoteHint() -> LocalizedStringKey {
+        return getNoteHint(transactionType: transactionType)
+    }
+    
+    func getAccountTitle() -> LocalizedStringKey {
+        return getAccountTitle(transactionType: transactionType)
+    }
+    
+    func shouldShowTransferSection() -> Bool {
+        return transactionType == .transfer
+    }
+    
+    func shouldShowCategorySection() -> Bool {
+        return transactionType == .expense
+    }
+    
+    func getAccountsUi() -> [Account] {
+        if isEditMode(), selectedTransferAccount == nil {
+            var accounts = accounts
+            accounts.append(Account.dummy1)
+            return accounts
+        } else {
+            return accounts
+        }
+    }
+    
+    func getSelectedTransferAccountUi() -> Account? {
+        if isEditMode(), selectedTransferAccount == nil {
+            return Account.dummy1
+        } else {
+            return selectedTransferAccount
+        }
+    }
+    
+    private func getTitle(isEditMode: Bool, transactionType: TransactionType) -> LocalizedStringKey {
+        if isEditMode {
+            switch transactionType {
+            case .income:
+                return LocalizedStringKey("transaction_edit_income")
+            case .expense:
+                return LocalizedStringKey("transaction_edit_expense")
+            case .transfer:
+                return LocalizedStringKey("transaction_edit_transfer")
+            }
+        } else {
+            return LocalizedStringKey("transaction_edit_add")
+        }
+    }
+
+    private func getNoteHint(transactionType: TransactionType) -> LocalizedStringKey {
+        switch transactionType {
+        case .income:
+            return LocalizedStringKey("transaction_edit_note_income_hint")
+        case .expense:
+            return LocalizedStringKey("transaction_edit_note_expense_hint")
+        case .transfer:
+            return LocalizedStringKey("transaction_edit_note_transfer_hint")
+        }
+    }
+
+    func getTransactionTypeTitle(transactionType: TransactionType) -> LocalizedStringKey {
+        switch transactionType {
+        case .income:
+            return LocalizedStringKey("transaction_income")
+        case .expense:
+            return LocalizedStringKey("transaction_expense")
+        case .transfer:
+            return LocalizedStringKey("transaction_transfer")
+        }
+    }
+
+    private func getAccountTitle(transactionType: TransactionType) -> LocalizedStringKey {
+        switch transactionType {
+        case .transfer:
+            return LocalizedStringKey("transaction_edit_account_from")
+        default:
+            return LocalizedStringKey("transaction_edit_account")
+        }
+    }
+}
+
 // MARK: - Action
 
 enum TransactionDetailAction: Equatable {
-    case onAppear(UUID?)
-    
-    case dataLoaded([Account], TransactionWithAccount?)
-    
     case save
     case delete
     
@@ -57,88 +146,7 @@ enum TransactionDetailAction: Equatable {
 
 struct TransactionDetailEnvironment {
     var date: () -> Date
-    var mainQueue: AnySchedulerOf<DispatchQueue>
-    var accounts: () -> Effect<[Account], Never>
-    var transaction: (UUID) -> Effect<TransactionWithAccount, Never>
-}
-
-// MARK: - Reducer
-
-let transactionDetailReducer = Reducer<TransactionDetailState, TransactionDetailAction, TransactionDetailEnvironment> { state, action, environment in
-    switch action {
-    case let .onAppear(transactionId):
-        if transactionId == nil {
-            return environment.accounts()
-                .receive(on: environment.mainQueue)
-                .eraseToEffect { accounts in
-                    TransactionDetailAction.dataLoaded(accounts, nil)
-                }
-        } else {
-            return environment.transaction(transactionId!)
-                .flatMap { transaction in
-                    environment.accounts()
-                        .map { accounts in
-                            (accounts, transaction)
-                        }
-                }
-                .receive(on: environment.mainQueue)
-                .eraseToEffect { (accounts, transaction) in
-                    TransactionDetailAction.dataLoaded(accounts, transaction)
-                }
-        }
-    case let .dataLoaded(accounts, transaction):
-        state.transactionId = transaction?.transaction.id
-        state.transactionType = transaction?.transaction.type ?? .expense
-        state.category = transaction?.transaction.categoryType ?? .others
-        state.note = transaction?.transaction.note ?? ""
-        state.totalAmount = "\(transaction?.transaction.amount ?? 0)"
-        state.transactionDate = transaction?.transaction.date ?? environment.date()
-        state.transactionCreatedAt = transaction?.transaction.createdAt ?? environment.date()
-        state.transactionUpdatedAt = transaction?.transaction.updatedAt
-        state.currency = transaction?.transaction.currency ?? accounts.getDefault().currency
-        
-        state.accounts = accounts
-        state.selectedAccount = transaction?.account ?? accounts.getDefault()
-        state.selectedTransferAccount = transaction?.transferAccount
-        
-        return .none
-        
-    case .save:
-        return .none
-    case .delete:
-        return .none
-        
-    case let .selectTransactionType(type):
-        state.transactionType = type
-        return .none
-
-    case let .totalAmountChange(totalAmount):
-        state.totalAmount = totalAmount
-        return .none
-        
-    case let .changeNote(note):
-        state.note = note
-        return .none
-        
-    case let .selectAccount(account):
-        state.selectedAccount = account
-        state.selectedTransferAccount = state.accounts.select(except: state.selectedAccount)
-        return .none
-        
-    case let .selectTransferAccount(account):
-        state.selectedTransferAccount = account
-        state.selectedAccount = state.accounts.select(except: state.selectedTransferAccount!)!
-        return .none
-    
-    case .clickDate:
-        state.datePickerShown = !state.datePickerShown
-        return .none
-    case let .selectDate(date):
-        state.transactionDate = date
-        return .none
-        
-    case let .selectCategory(category):
-        state.category = category
-        return .none
-    }
+    var mainQueue: DispatchQueue
+    var accounts: () -> AnyPublisher<[Account], Never>
+    var transaction: (UUID) -> AnyPublisher<TransactionWithAccount, Never>
 }

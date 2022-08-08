@@ -5,7 +5,6 @@
 //  Created by Wisnu Kurniawan on 31/07/22.
 //
 
-import ComposableArchitecture
 import CoreData
 import SwiftUI
 
@@ -30,35 +29,7 @@ struct ContentView: View {
                     }
                 }
                 .popover(isPresented: $showingTransactionDetail) {
-                    TransactionDetailScreen(
-                        store: Store(
-                            initialState: TransactionDetailState(),
-                            reducer: transactionDetailReducer.debug(),
-                            environment: TransactionDetailEnvironment(
-                              date: Date.init,
-                              mainQueue: .main,
-                              accounts: {
-                                  Effect(
-                                    value: [
-                                        Account.empty
-                                    ]
-                                  )
-                              },
-                              transaction: { _ in
-                                  Effect(
-                                    value: TransactionWithAccount(
-                                        transaction: Transaction(
-                                            id: UUID(), currency: Currency.defaultValue, categoryType: .uncategorized, amount: Decimal(9999925), type: .transfer, date: Date(), createdAt: Date(), note: ""
-                                        ),
-                                        account: Account.empty,
-                                        transferAccount: Account.dummy2
-                                    )
-                                  )
-                              }
-                            )
-                          ),
-                        transactionId: Account.defaultId
-                    )
+                    TransactionDetailScreen()
                 }
         }
     }

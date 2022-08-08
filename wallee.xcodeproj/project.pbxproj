@@ -27,10 +27,10 @@
 		36AB12B5289E436A00436DE5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36AB12B3289E436A00436DE5 /* Localizable.strings */; };
 		36AB12B8289E437C00436DE5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36AB12B6289E437C00436DE5 /* Localizable.strings */; };
 		36AB12BB289E4DD400436DE5 /* TransactionDetailEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB12BA289E4DD400436DE5 /* TransactionDetailEffect.swift */; };
-		36AB12C3289E997B00436DE5 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 36AB12C2289E997B00436DE5 /* ComposableArchitecture */; };
 		36AB12C6289F2DCB00436DE5 /* Account+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB12C5289F2DCB00436DE5 /* Account+Ext.swift */; };
 		36AB12CA289F2F4A00436DE5 /* Currency+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB12C9289F2F4A00436DE5 /* Currency+Ext.swift */; };
 		36AB12CC289F336B00436DE5 /* Amount+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB12CB289F336B00436DE5 /* Amount+Ext.swift */; };
+		36DC75CC28A0F36C0065E805 /* TransactionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DC75CB28A0F36C0065E805 /* TransactionDetailViewModel.swift */; };
 		36E2043D28965BDD00BBC1B9 /* WalleeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2043C28965BDD00BBC1B9 /* WalleeApp.swift */; };
 		36E2043F28965BDD00BBC1B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E2043E28965BDD00BBC1B9 /* ContentView.swift */; };
 		36E2044128965BDF00BBC1B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36E2044028965BDF00BBC1B9 /* Assets.xcassets */; };
@@ -88,6 +88,7 @@
 		36AB12C5289F2DCB00436DE5 /* Account+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Ext.swift"; sourceTree = "<group>"; };
 		36AB12C9289F2F4A00436DE5 /* Currency+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+Ext.swift"; sourceTree = "<group>"; };
 		36AB12CB289F336B00436DE5 /* Amount+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Amount+Ext.swift"; sourceTree = "<group>"; };
+		36DC75CB28A0F36C0065E805 /* TransactionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewModel.swift; sourceTree = "<group>"; };
 		36E2043928965BDD00BBC1B9 /* wallee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E2043C28965BDD00BBC1B9 /* WalleeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalleeApp.swift; sourceTree = "<group>"; };
 		36E2043E28965BDD00BBC1B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -126,7 +127,6 @@
 			files = (
 				36E204AF289A05B900BBC1B9 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				36E204B1289A05B900BBC1B9 /* FirebaseCrashlytics in Frameworks */,
-				36AB12C3289E997B00436DE5 /* ComposableArchitecture in Frameworks */,
 				36E204B3289A05B900BBC1B9 /* FirebasePerformance in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +214,7 @@
 				36AB12A8289E192700436DE5 /* TransactionDetailScreen.swift */,
 				36AB12AE289E3E9900436DE5 /* TransactionDetailCore.swift */,
 				36AB12BA289E4DD400436DE5 /* TransactionDetailEffect.swift */,
+				36DC75CB28A0F36C0065E805 /* TransactionDetailViewModel.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -422,7 +423,6 @@
 				36E204AE289A05B900BBC1B9 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				36E204B0289A05B900BBC1B9 /* FirebaseCrashlytics */,
 				36E204B2289A05B900BBC1B9 /* FirebasePerformance */,
-				36AB12C2289E997B00436DE5 /* ComposableArchitecture */,
 			);
 			productName = wallee;
 			productReference = 36E2043928965BDD00BBC1B9 /* wallee.app */;
@@ -455,7 +455,6 @@
 			mainGroup = 36E2043028965BDD00BBC1B9;
 			packageReferences = (
 				36E204AD289A05B900BBC1B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				36AB12C1289E997B00436DE5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 36E2043A28965BDD00BBC1B9 /* Products */;
 			projectDirPath = "";
@@ -565,6 +564,7 @@
 				36AB12C6289F2DCB00436DE5 /* Account+Ext.swift in Sources */,
 				36E204A42899E93C00BBC1B9 /* Initializer.swift in Sources */,
 				36E204802896793800BBC1B9 /* AccountRecordDb+CoreDataProperties.swift in Sources */,
+				36DC75CC28A0F36C0065E805 /* TransactionDetailViewModel.swift in Sources */,
 				36E2048328967DCA00BBC1B9 /* Loggr.swift in Sources */,
 				36E2043D28965BDD00BBC1B9 /* WalleeApp.swift in Sources */,
 				363807C628A08F2B001219BA /* Date+Ext.swift in Sources */,
@@ -810,14 +810,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		36AB12C1289E997B00436DE5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.0;
-			};
-		};
 		36E204AD289A05B900BBC1B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -829,11 +821,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		36AB12C2289E997B00436DE5 /* ComposableArchitecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 36AB12C1289E997B00436DE5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableArchitecture;
-		};
 		36E204AE289A05B900BBC1B9 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 36E204AD289A05B900BBC1B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
