@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Transaction: Equatable {
+struct Transaction: Equatable, Hashable {
     var id: UUID
     var currency: Currency
     var categoryType: CategoryType

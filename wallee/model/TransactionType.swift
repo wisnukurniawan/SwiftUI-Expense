@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum TransactionType: Equatable {
-    case income
+enum TransactionType: Equatable, CaseIterable, Hashable {
     case expense
+    case income
     case transfer
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CategoryType: Equatable {
+enum CategoryType: Equatable, CaseIterable, Hashable {
     case monthlyFee
     case adminFee
     case pets

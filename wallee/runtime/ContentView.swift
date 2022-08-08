@@ -29,7 +29,7 @@ struct ContentView: View {
                         }
                     }
                 }
-                .sheet(isPresented: $showingTransactionDetail) {
+                .popover(isPresented: $showingTransactionDetail) {
                     TransactionDetailScreen(
                         store: Store(
                             initialState: TransactionDetailState(),
@@ -40,9 +40,7 @@ struct ContentView: View {
                               accounts: {
                                   Effect(
                                     value: [
-                                        Account(
-                                            id: defaultAccountId, currency: Currency.defaultValue, amount: Decimal.zero, name: "Cash", type: .cash, createdAt: Date.init(), transactions: []
-                                        )
+                                        Account.empty
                                     ]
                                   )
                               },
@@ -50,17 +48,16 @@ struct ContentView: View {
                                   Effect(
                                     value: TransactionWithAccount(
                                         transaction: Transaction(
-                                            id: UUID(), currency: Currency.defaultValue, categoryType: .uncategorized, amount: Decimal.zero, type: .expense, date: Date(), createdAt: Date(), note: ""
+                                            id: UUID(), currency: Currency.defaultValue, categoryType: .uncategorized, amount: Decimal.zero, type: .transfer, date: Date(), createdAt: Date(), note: ""
                                         ),
-                                        account: Account(
-                                            id: UUID(), currency: Currency.defaultValue, amount: Decimal.zero, name: "", type: .cash, createdAt: Date.init(), transactions: []
-                                        )
+                                        account: Account.empty,
+                                        transferAccount: Account.dummy2
                                     )
                                   )
                               }
                             )
                           ),
-                        transactionId: nil
+                        transactionId: nil // Account.defaultId
                     )
                 }
         }
