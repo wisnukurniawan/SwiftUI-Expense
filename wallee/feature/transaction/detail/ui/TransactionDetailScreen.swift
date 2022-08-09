@@ -47,7 +47,34 @@ struct TransactionDetailScreen: View {
                     )
                     .keyboardType(.numberPad)
                 } header: {
-                    Text(LocalizedStringKey("transaction_edit_total"))
+                    if viewModel.state.isEditMode {
+                        Text(LocalizedStringKey("transaction_edit_total"))
+                    } else {
+                        VStack(alignment: .leading, spacing: 34) {
+                            Picker(
+                                "Transaction type",
+                                selection: Binding<TransactionType>(
+                                    get: { viewModel.state.transactionType },
+                                    set: { transactionType in
+                                        withAnimation {
+                                            viewModel.dispatch(action: TransactionDetailAction.selectTransactionType(transactionType))
+                                        }
+                                    }
+                                )
+                            ) {
+                                ForEach(TransactionType.allCases, id: \.self) { item in
+                                    Text(viewModel.state.getTransactionTypeTitle(transactionType: item)).tag(item)
+                                }
+                            }
+                            .pickerStyle(.segmented)
+                            .textCase(nil)
+                            .padding([.top], 6)
+                            
+                            Text(LocalizedStringKey("transaction_edit_total"))
+                                .padding([.leading], 20)
+                                .padding([.bottom], 6)
+                        }.listRowInsets(EdgeInsets())
+                    }
                 }
                 
                 // General section
@@ -90,10 +117,12 @@ struct TransactionDetailScreen: View {
                                         Text(item.name).tag(item)
                                     }
                                 }
-                            }.disabled(viewModel.state.isEditMode)
+                            }
+                            .disabled(viewModel.state.isEditMode)
                         }
                     }
                     
+                    // Category section
                     if viewModel.state.shouldShowCategorySection {
                         Picker(
                             LocalizedStringKey("category"),
@@ -137,6 +166,7 @@ struct TransactionDetailScreen: View {
                 } header: {
                     Text(LocalizedStringKey("transaction_edit_general"))
                 }
+                
                 // Note section
                 Section {
                     TextField(
@@ -166,25 +196,7 @@ struct TransactionDetailScreen: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    if viewModel.state.isEditMode {
-                        Text(viewModel.state.toolbarTitle).font(.headline)
-                    } else {
-                        Picker(
-                            "Transaction type",
-                            selection: Binding<TransactionType>(
-                                get: { viewModel.state.transactionType },
-                                set: { transactionType in
-                                    withAnimation {
-                                        viewModel.dispatch(action: TransactionDetailAction.selectTransactionType(transactionType))
-                                    }
-                                }
-                            )
-                        ) {
-                            ForEach(TransactionType.allCases, id: \.self) { item in
-                                Text(viewModel.state.getTransactionTypeTitle(transactionType: item)).tag(item)
-                            }
-                        }.pickerStyle(.segmented).fixedSize()
-                    }
+                    Text(viewModel.state.toolbarTitle).font(.headline)
                 }
                 
                 ToolbarItem(placement: .cancellationAction) {
