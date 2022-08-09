@@ -15,7 +15,7 @@ struct TransactionDetailScreen: View {
             mainQueue: .main,
             accounts: {
                 Just(
-                    [Account.empty]
+                    [Account.empty, Account.dummy2]
                 ).eraseToAnyPublisher()
             },
             transaction: { _ in
@@ -53,7 +53,7 @@ struct TransactionDetailScreen: View {
                 // General section
                 Section {
                     Picker(
-                        viewModel.state.getAccountTitle(),
+                        viewModel.state.accountTitle,
                         selection: Binding<Account>(
                             get: { viewModel.state.selectedAccount },
                             set: { viewModel.dispatch(action: TransactionDetailAction.selectAccount($0)) }
@@ -62,10 +62,10 @@ struct TransactionDetailScreen: View {
                         ForEach(viewModel.state.accounts, id: \.self) { item in
                             Text(item.name).tag(item)
                         }
-                    }.disabled(viewModel.state.isEditMode())
+                    }
                     
-                    if viewModel.state.shouldShowTransferSection() {
-                        if viewModel.state.selectedTransferAccount == nil {
+                    if viewModel.state.shouldShowTransferSection {
+                        if viewModel.state.selectedTransferAccountUi == nil {
                             HStack {
                                 Text(LocalizedStringKey("transaction_edit_account_to"))
                                 Spacer()
@@ -75,27 +75,26 @@ struct TransactionDetailScreen: View {
                                     Text(LocalizedStringKey("transaction_edit_account_to_create_transfer_account"))
                                 }
                             }
-                            
                         } else {
                             Picker(
                                 LocalizedStringKey("transaction_edit_account_to"),
                                 selection: Binding<Account>(
-                                    get: { viewModel.state.getSelectedTransferAccountUi()! },
+                                    get: { viewModel.state.selectedTransferAccountUi! },
                                     set: { viewModel.dispatch(action: TransactionDetailAction.selectTransferAccount($0)) }
                                 )
                             ) {
-                                ForEach(viewModel.state.getAccountsUi(), id: \.self) { item in
+                                ForEach(viewModel.state.transfereAccounts, id: \.self) { item in
                                     if item.id == Account.dummy1.id {
                                         Text(LocalizedStringKey("transaction_account_deleted")).tag(item)
                                     } else {
                                         Text(item.name).tag(item)
                                     }
                                 }
-                            }.disabled(viewModel.state.isEditMode())
+                            }.disabled(viewModel.state.isEditMode)
                         }
                     }
                     
-                    if viewModel.state.shouldShowCategorySection() {
+                    if viewModel.state.shouldShowCategorySection {
                         Picker(
                             LocalizedStringKey("category"),
                             selection: Binding<CategoryType>(
@@ -116,7 +115,10 @@ struct TransactionDetailScreen: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(LocalizedStringKey("transaction_edit_date_transaction"))
                         Button(getStringFromDate(withFormat: "EEE, dd MMM yyyy", date: viewModel.state.transactionDate)) {
-                            viewModel.dispatch(action: TransactionDetailAction.clickDate)
+                            withAnimation {
+                                viewModel.dispatch(action: TransactionDetailAction.clickDate)
+                            }
+                            
                         }.font(.caption)
                     }
                     
@@ -135,11 +137,10 @@ struct TransactionDetailScreen: View {
                 } header: {
                     Text(LocalizedStringKey("transaction_edit_general"))
                 }
-                
                 // Note section
                 Section {
                     TextField(
-                        viewModel.state.getNoteHint(),
+                        viewModel.state.notePlaceholder,
                         text: Binding<String>(
                             get: { viewModel.state.note },
                             set: { viewModel.dispatch(action: TransactionDetailAction.changeNote($0)) }
@@ -150,7 +151,7 @@ struct TransactionDetailScreen: View {
                 }
                 
                 // Delete section
-                if viewModel.state.isEditMode() {
+                if viewModel.state.isEditMode {
                     HStack {
                         Spacer()
                         Button(role: .destructive, action: {
@@ -165,15 +166,19 @@ struct TransactionDetailScreen: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    if viewModel.state.isEditMode() {
-                        Text(viewModel.state.getTitle()).font(.headline)
+                    if viewModel.state.isEditMode {
+                        Text(viewModel.state.toolbarTitle).font(.headline)
                     } else {
                         Picker(
                             "Transaction type",
                             selection: Binding<TransactionType>(
                                 get: { viewModel.state.transactionType },
-                                set: { viewModel.dispatch(action: TransactionDetailAction.selectTransactionType($0)) }
-                            ).animation()
+                                set: { transactionType in
+                                    withAnimation {
+                                        viewModel.dispatch(action: TransactionDetailAction.selectTransactionType(transactionType))
+                                    }
+                                }
+                            )
                         ) {
                             ForEach(TransactionType.allCases, id: \.self) { item in
                                 Text(viewModel.state.getTransactionTypeTitle(transactionType: item)).tag(item)

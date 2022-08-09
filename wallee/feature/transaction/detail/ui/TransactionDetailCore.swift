@@ -32,32 +32,32 @@ public struct TransactionDetailState: Equatable {
 // MARK: - Derived
 
 extension TransactionDetailState {
-    func isEditMode() -> Bool {
+    var isEditMode: Bool {
         return transactionId != nil
     }
     
-    func getTitle() -> LocalizedStringKey {
-        return getTitle(isEditMode: isEditMode(), transactionType: transactionType)
+    var toolbarTitle: LocalizedStringKey {
+        return getTitle(isEditMode: isEditMode, transactionType: transactionType)
     }
     
-    func getNoteHint() -> LocalizedStringKey {
-        return getNoteHint(transactionType: transactionType)
+    var notePlaceholder: LocalizedStringKey {
+        return getNotePlaceHolder(transactionType: transactionType)
     }
     
-    func getAccountTitle() -> LocalizedStringKey {
+    var accountTitle: LocalizedStringKey {
         return getAccountTitle(transactionType: transactionType)
     }
     
-    func shouldShowTransferSection() -> Bool {
+    var shouldShowTransferSection: Bool {
         return transactionType == .transfer
     }
     
-    func shouldShowCategorySection() -> Bool {
+    var shouldShowCategorySection: Bool {
         return transactionType == .expense
     }
     
-    func getAccountsUi() -> [Account] {
-        if isEditMode(), selectedTransferAccount == nil {
+    var transfereAccounts: [Account] {
+        if isEditMode && selectedTransferAccount == nil {
             var accounts = accounts
             accounts.append(Account.dummy1)
             return accounts
@@ -66,8 +66,8 @@ extension TransactionDetailState {
         }
     }
     
-    func getSelectedTransferAccountUi() -> Account? {
-        if isEditMode(), selectedTransferAccount == nil {
+    var selectedTransferAccountUi: Account? {
+        if isEditMode && selectedTransferAccount == nil {
             return Account.dummy1
         } else {
             return selectedTransferAccount
@@ -89,7 +89,7 @@ extension TransactionDetailState {
         }
     }
 
-    private func getNoteHint(transactionType: TransactionType) -> LocalizedStringKey {
+    private func getNotePlaceHolder(transactionType: TransactionType) -> LocalizedStringKey {
         switch transactionType {
         case .income:
             return LocalizedStringKey("transaction_edit_note_income_hint")

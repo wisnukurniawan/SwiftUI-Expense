@@ -70,7 +70,7 @@ import Combine
         
         state.accounts = accounts
         state.selectedAccount = transaction?.account ?? accounts.getDefault()
-        state.selectedTransferAccount = transaction?.transferAccount
+        state.selectedTransferAccount = transaction?.transferAccount ?? accounts.select(except: state.selectedAccount)
     }
     
     func dispatch(action: TransactionDetailAction) {
